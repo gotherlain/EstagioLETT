@@ -1,0 +1,32 @@
+package fazenda;
+
+public class Galinha extends Aves {
+	int ovoGalinha=0;
+	public Galinha(Double idade, Double altura, String corDaPena) {
+		super(idade, altura,corDaPena);
+	
+	}
+	
+	public Galinha(Double idade, Double altura, String corDaPena, int ovoGalinha) {
+		super(idade, altura, corDaPena);
+		this.ovoGalinha = ovoGalinha;
+	}
+	
+	public int getOvoGalinha() {
+		return ovoGalinha;
+	}
+
+
+	public void setOvoGalinha(int ovoGalinha) {
+		this.ovoGalinha = ovoGalinha;
+	}
+
+
+	@Override
+	public void BotarOvo(int x) {
+		System.out.println("A Galinha " + x +" botou ovo");
+		Controle.listaDeGalinhas.get(x).setOvoGalinha(+1);
+	}
+	
+	
+}

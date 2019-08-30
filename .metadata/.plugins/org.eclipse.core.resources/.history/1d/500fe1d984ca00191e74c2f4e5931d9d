@@ -1,0 +1,30 @@
+package fazenda;
+
+public class Morcego extends Mamiferos {
+
+	int vzsAmamentMorcego =0;
+
+	public Morcego(Double idade, Double altura, String corDoPelo, int vzsAmamentMorcego) {
+		super(idade, altura, corDoPelo);
+		this.vzsAmamentMorcego = vzsAmamentMorcego;
+	}
+
+	public Morcego(Double idade, Double altura, String corDoPelo) {
+		super(idade, altura, corDoPelo);
+	}
+
+	public int getVzsAmamentMorcego() {
+		return vzsAmamentMorcego;
+	}
+
+	public void setVzsAmamentMorcego(int vzsAmamentMorcego) {
+		this.vzsAmamentMorcego = vzsAmamentMorcego;
+	}
+	
+	@Override
+	public void Amamentar(int x) {
+		System.out.println("O morcego " + ((x)+1) +" amamentou");
+		Controle.listaDeVacas.get(x).setVezesQAmamentou(vzsQAmamentMorcego+1);
+		System.out.println("A Vaca "+((x)+1)+" ja amamentou " + Controle.listaDeVacas.get(x).getVezesQAmamentou() +" Vezes");
+	}
+}

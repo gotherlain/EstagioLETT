@@ -1,0 +1,10 @@
+package fazenda;
+
+public class fazenda {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

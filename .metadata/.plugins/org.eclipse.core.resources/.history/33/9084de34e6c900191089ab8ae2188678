@@ -1,0 +1,13 @@
+package fazenda;
+
+public class Galinha extends Aves {
+	
+	String corDaPena = null;
+
+	public Galinha(double idade, double altura, String corDaPena) {
+		super(idade, altura);
+		this.corDaPena = corDaPena;
+	}
+	
+	
+}

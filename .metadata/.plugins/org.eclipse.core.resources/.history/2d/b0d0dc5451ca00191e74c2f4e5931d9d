@@ -1,0 +1,51 @@
+package fazenda;
+
+class Aves {
+	
+	Double idade =0.0;
+	Double altura=0.0;
+	String corDaPena = null;
+	public Aves() {
+		
+	}
+	public Aves(Double idade, Double altura, String corDaPena) {
+		
+		this.idade = idade;
+		this.altura = altura;
+		this.corDaPena = corDaPena;
+	}
+
+	public Double getIdade() {
+		return idade;
+	}
+
+	public void setIdade(Double idade) {
+		this.idade = idade;
+	}
+
+	public Double getAltura() {
+		return altura;
+	}
+
+	public void setAltura(Double altura) {
+		this.altura = altura;
+	}
+	
+	public String getCorDaPena() {
+		return corDaPena;
+	}
+
+	public void setCorDaPena(String corDaPena) {
+		this.corDaPena = corDaPena;
+	}
+	
+	 void BotarOvo() {
+		
+	}
+	
+	
+	
+	
+	
+
+}

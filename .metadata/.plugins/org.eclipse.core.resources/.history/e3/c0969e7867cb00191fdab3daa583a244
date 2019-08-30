@@ -1,0 +1,25 @@
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+public class Main {
+
+	public static void main(String[] args){
+		// TODO Auto-generated method stub
+
+		try {
+			//String html = args[0];
+			String html = null;
+			Document doc = Jsoup.connect("https://www.kabum.com.br/produto/55819/pen-drive-kingston-datatraveler-usb-3-0-16gb-dt100g3-16gb").get();
+			Element nomeProduto = doc.select("h1.titulo_det").get(0);
+			Element descricao = doc.select("div.content_tab").get(0);
+			Element precoNormal = doc.select("div.preco_normal").get(0);
+			System.out.println(nomeProduto.text());
+			System.out.println(descricao.text());
+		
+		}
+		catch(Exception e) {
+			
+		}
+	}
+
+}

@@ -1,0 +1,15 @@
+package fazenda;
+
+public class fazenda {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Galinha testeGalinha = new Galinha(7.0,12.0,"vermelho");
+		Controle.listaDeGalinhas.add(testeGalinha);
+		
+		for(Galinha x : Controle.listaDeGalinhas ) {
+			System.out.println(x);
+		}
+	}
+
+}

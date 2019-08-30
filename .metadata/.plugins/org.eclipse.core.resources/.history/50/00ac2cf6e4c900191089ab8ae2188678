@@ -1,0 +1,11 @@
+package fazenda;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Controle {
+	
+	public static List<Galinha> listaDeGalinhas = new ArrayList<>();
+	
+	//public static List<>
+}

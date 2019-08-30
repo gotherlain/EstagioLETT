@@ -1,0 +1,25 @@
+package fazenda;
+
+public class Morcego extends Mamiferos {
+
+	int vzsAmamentMorcego =0;
+
+	public Morcego(Double idade, Double altura, String corDoPelo, int vzsAmamentMorcego) {
+		super(idade, altura, corDoPelo);
+		this.vzsAmamentMorcego = vzsAmamentMorcego;
+	}
+
+	public Morcego(Double idade, Double altura, String corDoPelo) {
+		super(idade, altura, corDoPelo);
+	}
+
+	public int getVzsAmamentMorcego() {
+		return vzsAmamentMorcego;
+	}
+
+	public void setVzsAmamentMorcego(int vzsAmamentMorcego) {
+		this.vzsAmamentMorcego = vzsAmamentMorcego;
+	}
+	
+	
+}

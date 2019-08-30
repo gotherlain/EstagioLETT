@@ -1,0 +1,58 @@
+package fazenda;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.Player;
+
+public class Galinha extends Aves implements Som {
+	int ovoGalinha=0;
+	
+	public Galinha(Double idade, Double altura, String corDaPena) {
+		super(idade, altura,corDaPena);
+	
+	}
+	
+	public Galinha(Double idade, Double altura, String corDaPena, int ovoGalinha) {
+		super(idade, altura, corDaPena);
+		this.ovoGalinha = ovoGalinha;
+	}
+	
+	@Override
+	public void Som(){
+		System.out.println("cocorico");
+//		InputStream som;
+		try {
+			FileInputStream fileInputStream = new FileInputStream("\\Estagio\\Sons\\Galinha.mp3");
+			Player player = new Player(fileInputStream);
+			player.play();
+			
+		}
+		catch(FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		catch(JavaLayerException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public int getOvoGalinha() {
+		return ovoGalinha;
+	}
+
+
+	public void setOvoGalinha(int ovoGalinha) {
+		this.ovoGalinha = ovoGalinha;
+	}
+
+
+	@Override
+	public void BotarOvo(int x) {
+		System.out.println("A Galinha " + ((x)+1) +" botou ovo");
+		Controle.listaDeGalinhas.get(x).setOvoGalinha(ovoGalinha+1);
+		System.out.println("A galinha "+((x)+1)+" ja botou " + Controle.listaDeGalinhas.get(x).getOvoGalinha() +" Ovos");
+	}
+	
+	
+}

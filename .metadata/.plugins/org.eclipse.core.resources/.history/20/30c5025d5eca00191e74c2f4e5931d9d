@@ -1,0 +1,7 @@
+package fazenda;
+
+public class Vaca extends Mamiferos {
+
+	
+	
+}

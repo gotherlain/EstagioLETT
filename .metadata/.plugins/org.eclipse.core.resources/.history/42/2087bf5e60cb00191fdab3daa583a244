@@ -1,0 +1,26 @@
+package crawler;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+public class Main {
+
+	public static void main(String[] args){
+		// TODO Auto-generated method stub
+
+		try {
+			//String html = args[0];
+			String html = null;
+			Document doc = Jsoup.connect("https://saraiva.com.br").get();
+			Elements testm4st3r = doc.getElementsByClass("product-name");
+					
+			System.out.println(testm4st3r);
+		}
+		catch(Exception e) {
+			
+		}
+	}
+
+}

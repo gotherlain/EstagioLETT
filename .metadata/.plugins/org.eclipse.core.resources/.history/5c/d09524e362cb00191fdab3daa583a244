@@ -1,0 +1,29 @@
+package crawler;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+public class Main {
+
+	public static void main(String[] args){
+		// TODO Auto-generated method stub
+
+		try {
+			//String html = args[0];
+			String html = null;
+			Document doc = Jsoup.connect("https://kabum.com.br/perifericos/pen-drive").get();
+			Elements nomeProduto = doc.select("h1.titulo_det");
+			
+			for(int i=0;i<10;i++) {
+				Element produto = testm4st3r.get(i);
+				System.out.println(produto.text());
+			}
+		}
+		catch(Exception e) {
+			
+		}
+	}
+
+}

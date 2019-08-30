@@ -1,0 +1,5 @@
+package fazenda;
+
+public class Pato extends Aves {
+
+}

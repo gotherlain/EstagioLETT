@@ -1,0 +1,186 @@
+package fazenda;
+
+import java.util.Scanner;
+
+public class fazenda {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Galinha testeGalinha = new Galinha(7.0,12.0,"vermelho");
+		Galinha testeGalinha2 = new Galinha(7.0,15.0,"vermelho azul");
+		Controle.listaDeGalinhas.add(testeGalinha);
+		Controle.listaDeGalinhas.add(testeGalinha2);
+		
+		Pato testePato = new Pato(34.1,16.2,"conza");
+		Controle.listaDePatos.add(testePato);
+
+		Pato testePato2 = new Pato(24.1,16.2,"lilas");
+		Controle.listaDePatos.add(testePato2);
+		MenuPrincipal();
+	
+		
+		
+		
+		
+	
+	}
+	
+	static void MenuPrincipal() {
+		
+		Scanner scanneer = new Scanner(System.in);
+		System.out.println("Digite a opção desejada: ");
+		System.out.println("1 - Inserir Animal");
+		System.out.println("2 - Ver Animais");
+		int opcao = scanneer.nextInt();	
+		if(opcao == 1 | opcao == 2) {
+			if(opcao == 1) {
+				MenuInserirAnimal();
+			}
+			if(opcao == 2) {
+				MenuVerAnimais();
+			}
+		}
+		
+		else {
+			System.out.println("Opção invalida");
+		}
+		scanneer.close();
+	}
+	
+	static void MenuVerAnimais() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Deseja ver:");
+		System.out.println("1 - Aves\n2 - Mamiferos:");
+		int op = scanner.nextInt();
+		if(op == 1 | op ==2) {
+			if(op==1) {
+				System.out.println("1 - Galinha\n 2 - Pato");
+				if(op == 1 | op ==2) {
+					if(op==1) {
+						MostraGalinhas();
+					}
+					if(op==2) {
+					//	MostraPatos();
+					}
+				}
+			}
+			if(op ==2) {
+				
+			}
+		}
+		scanner.close();
+	}
+	
+	static void MostraGalinhas() {
+		for(Galinha x : Controle.listaDeGalinhas ) {
+			System.out.println("Galinha numero: "+ (Controle.listaDeGalinhas.indexOf(x)+(1)));
+			System.out.println("Idade:" + x.getIdade());
+			System.out.println("Tamanho: " + x.getAltura());
+			System.out.println("Cor da Pena:" + x.getCorDaPena());
+			System.out.println();
+		}
+	}
+	
+	static void MostraPatos() {
+		for(Pato x : Controle.listaDePatos ) {
+			System.out.println("Pato numero: "+ (Controle.listaDePatos.indexOf(x)+(1)));
+			System.out.println("Idade:" + x.getIdade());
+			System.out.println("Tamanho: " + x.getAltura());
+			System.out.println("Cor da Pena:" + x.getCorDaPena());
+			System.out.println();
+		}
+	}
+	
+	static void MenuInserirAnimal() {
+		Scanner opcaoEscolhida1 = new Scanner(System.in);
+		int escolha = 0;
+		System.out.println("Qual o tipo de animal?");
+		System.out.println("1 - Ave ");
+		System.out.println("2 - Mamifero");
+		escolha = opcaoEscolhida1.nextInt();
+		try{
+			if(escolha == 1 || escolha == 2) {
+				Animal(escolha);
+			}
+			else {
+				System.out.println("A");
+			}
+			
+		}
+		
+		catch(Exception e) {
+			System.out.println("Opção Invalida");
+		}
+		opcaoEscolhida1.close();
+	}
+	
+	static void Animal(int escolha) {
+		Scanner scanner = new Scanner(System.in);
+		Double idade=0.0;
+		Double tamanho=0.0;
+		
+		System.out.println("Qual a idade do animal?\nRepresente um ano como 1,0 e 8 meses como 0,8");
+		idade = scanner.nextDouble();
+		System.out.println("Qual o tamanho dele? \nRepresente um metro como 1,0");
+		tamanho = scanner.nextDouble();
+		if(escolha == 1) {
+			
+			Aves(idade,tamanho);
+		}
+		else{
+			Mamiferos();
+		}
+		scanner.close();
+	}
+	
+	static void Aves(Double idade, Double tamanho) {
+		Scanner opcaoEscolhida2 = new Scanner(System.in);
+		int escolha = 0;
+		System.out.println("Qual Ave?");
+		System.out.println("1 - Galinha ");
+		System.out.println("2 - Pato");
+		escolha = opcaoEscolhida2.nextInt();
+		try{
+			if(escolha == 1 || escolha == 2) {
+				if(escolha == 1) {
+					criaGalinha(idade,tamanho);
+				}
+				else if(escolha == 2) {
+					criaPato(idade,tamanho);
+				}
+			}
+		}
+		
+		catch(Exception e) {
+			System.out.println("Opção Invalida");
+		}
+		opcaoEscolhida2.close();
+	}
+	
+	static void criaGalinha(Double idade, Double tamanho) {
+		Scanner opcaoEscolhidaGalinha = new Scanner(System.in);
+		String cor = null;
+		System.out.println("Digite a cor da pena da galinha");
+		cor = opcaoEscolhidaGalinha.nextLine();
+		Galinha testeGalinha = new Galinha(idade,tamanho,cor);
+		Controle.listaDeGalinhas.add(testeGalinha);
+		opcaoEscolhidaGalinha.close();
+	}
+	
+	static void criaPato(Double idade, Double tamanho) {
+		
+		Scanner opcaoEscolhida = new Scanner(System.in);
+		String cor = null;
+		System.out.println("Digite a cor da pena do pato");
+		cor = opcaoEscolhida.nextLine();
+		Pato testePato = new Pato(idade,tamanho,cor);
+		Controle.listaDePatos.add(testePato);
+		opcaoEscolhida.close();
+		
+	}
+	
+	static void Mamiferos() {
+		
+	}
+
+}

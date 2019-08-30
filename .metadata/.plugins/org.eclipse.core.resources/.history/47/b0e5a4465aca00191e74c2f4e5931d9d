@@ -1,0 +1,8 @@
+package fazenda;
+
+public class Pato extends Aves {
+	public Pato(Double idade, Double altura, String corDaPena) {
+		super(idade, altura,corDaPena);
+	
+	}
+}

@@ -1,0 +1,24 @@
+package crawler;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+
+public class Main {
+
+	public static void main(String[] args){
+		// TODO Auto-generated method stub
+
+		try {
+			//String html = args[0];
+			String html = null;
+			Document doc = Jsoup.connect("https://kabum.com.br/perifericos/pen-drive").get();
+			Element testm4st3r = doc.select("section.listagem-box").first();
+			System.out.println(testm4st3r.text());
+		}
+		catch(Exception e) {
+			
+		}
+	}
+
+}

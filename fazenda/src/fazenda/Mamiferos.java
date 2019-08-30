@@ -1,0 +1,43 @@
+package fazenda;
+
+public class Mamiferos {
+
+	Double idade =0.0;
+	Double altura=0.0;
+	String corDoPelo = null;
+	
+	public Mamiferos(Double idade, Double altura, String corDoPelo) {
+		
+		this.idade = idade;
+		this.altura = altura;
+		this.corDoPelo = corDoPelo;
+	}
+
+	public Double getIdade() {
+		return idade;
+	}
+
+	public void setIdade(Double idade) {
+		this.idade = idade;
+	}
+
+	public Double getAltura() {
+		return altura;
+	}
+
+	public void setAltura(Double altura) {
+		this.altura = altura;
+	}
+
+	public String getCorDoPelo() {
+		return corDoPelo;
+	}
+
+	public void setCorDoPelo(String corDoPelo) {
+		this.corDoPelo = corDoPelo;
+	}
+	
+	public void Amamentar(int x) {
+		
+	}
+}

@@ -1,0 +1,13 @@
+package fazenda;
+
+public class Vaca extends Mamiferos {
+	int a=0;
+
+	public Vaca(Double idade, Double altura, String corDoPelo) {
+		super(idade, altura, corDoPelo);
+		
+	}
+	
+	
+	
+}
