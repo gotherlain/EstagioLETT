@@ -6,6 +6,7 @@ Escolhi a Kabum.com.br
 
 Ao executar o programa ele pede uma url, nesse caso tem que ser qualquer produto do site kabum.com.br
 Ai ele retorna os dados do produto
+
 Exemplo:
 
 Digite a url:
