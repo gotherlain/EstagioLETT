@@ -1,6 +1,6 @@
 Desafio 2
 
-Scraper de um produto em um e-commerce
+Scraper de um produto em um e-commerce:
 
 Escolhi a Kabum.com.br
 
